@@ -87,7 +87,7 @@ rvm autolibs disable
 rvm install "ruby-3.0.2"
 rvm use 3.0.2 --default
 
-git clone https://github.com/chatwoot/chatwoot.git
+git clone https://github.com/fauzdar1/chatwoot.git
 cd chatwoot
 if [[ -z "$1" ]]; then
 git checkout master;
@@ -136,7 +136,7 @@ echo "To configure a domain and SSL certificate, follow the guide at https://www
 echo "***************************************************************************"
 else
 curl https://ssl-config.mozilla.org/ffdhe4096.txt >> /etc/ssl/dhparam
-wget https://raw.githubusercontent.com/chatwoot/chatwoot/develop/deployment/nginx_chatwoot.conf
+wget https://raw.githubusercontent.com/fauzdar1/chatwoot/develop/deployment/nginx_chatwoot.conf
 cp nginx_chatwoot.conf /etc/nginx/sites-available/nginx_chatwoot.conf
 certbot certonly --nginx -d $domain_name
 sed -i "s/chatwoot.domain.com/$domain_name/g" /etc/nginx/sites-available/nginx_chatwoot.conf
